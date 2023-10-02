@@ -3,6 +3,6 @@ import { createContext } from "react";
 
 
 
-const PedidoContext = createContext(null);
+const PedidoContext = createContext({});
 
 export default PedidoContext
