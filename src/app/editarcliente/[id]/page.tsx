@@ -199,12 +199,18 @@ const EditarCliente = () => {
 
 
           </div>
+          
+            
           { props.touched.nombre && props.errors.nombre ? (
-            <div className='bg-red-100 border-l-4 border-red-500 text-red-700 p-4 ' >
-              <p ><strong>Error:</strong> {props.errors.nombre}</p>
-            </div>
+          
+          <div className='bg-red-100 border-l-4 border-red-500 text-red-700 p-4 ' >
+              <p><strong>Error:</strong> El campo es obligatorio</p>
+          </div>
+          
+          
           ): null }
          
+          
 
 
           <div className='mb-4'>
@@ -221,7 +227,7 @@ const EditarCliente = () => {
           </div>
           { props.touched.apellido && props.errors.apellido ? (
             <div className='bg-red-100 border-l-4 border-red-500 text-red-700 p-4 ' >
-              <p ><strong>Error:</strong> {props.errors.apellido}</p>
+              <p ><strong>Error:</strong> El campo es obligatorio</p>
             </div>
           ): null }
 
@@ -240,7 +246,7 @@ const EditarCliente = () => {
           </div>
           { props.touched.empresa && props.errors.empresa ? (
             <div className='bg-red-100 border-l-4 border-red-500 text-red-700 p-4 ' >
-              <p ><strong>Error:</strong> {props.errors.empresa}</p>
+              <p ><strong>Error:</strong> El campo es obligatorio</p>
             </div>
           ): null }
 
@@ -257,11 +263,10 @@ const EditarCliente = () => {
 
               />
           </div>
-          { props.touched.email && props.errors.email ? (
-            <div className='bg-red-100 border-l-4 border-red-500 text-red-700 p-4 ' >
-              <p ><strong>Error:</strong> {props.errors.email}</p>
-            </div>
-          ): null }
+      
+          { props.touched.email && props.errors.email ? 
+            `${props.errors.email}`
+          : null }
 
 
 

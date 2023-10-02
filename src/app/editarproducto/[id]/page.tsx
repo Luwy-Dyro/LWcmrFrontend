@@ -154,7 +154,7 @@ const EditarProducto = () => {
         </div>
         { props.touched.nombre && props.errors.nombre ? (
           <div className='bg-red-100 border-l-4 border-red-500 text-red-700 p-4 ' >
-            <p ><strong>Error:</strong> {props.errors.nombre}</p>
+            <p ><strong>Error:</strong> Completar Campo</p>
           </div>
         ): null }
        
@@ -174,7 +174,7 @@ const EditarProducto = () => {
         </div>
         { props.touched.existencia && props.errors.existencia ? (
           <div className='bg-red-100 border-l-4 border-red-500 text-red-700 p-4 ' >
-             <p ><strong>Error:</strong> {props.errors.existencia}</p>
+             <p ><strong>Error:</strong> Completar campo</p>
           </div>
         ): null }
 
@@ -193,7 +193,7 @@ const EditarProducto = () => {
         </div>
         { props.touched.precio && props.errors.precio ? (
           <div className='bg-red-100 border-l-4 border-red-500 text-red-700 p-4 ' >
-             <p ><strong>Error:</strong> {props.errors.precio}</p>
+             <p ><strong>Error:</strong> Completar campo</p>
           </div>
         ): null }
 
