@@ -1,6 +1,8 @@
 // "use client"
 // import { useParams } from "next/navigation"
 
+import Image from "next/image";
+
 async function getUser(id:any){
   //console.log("obtenido---", id);
   const res = await fetch(`https://reqres.in/api/users/${id}`)
@@ -22,7 +24,7 @@ async function UsersPage({params}:any) {
     <div>
       <h1>Details</h1> 
       <div>
-        <img src={user.avatar} alt={user.first_name} />
+        <Image src={user.avatar} alt={user.first_name} />
         <div>
           <h3>{user.id} {user.first_name} {user.last_name}</h3>
           <p>{user.email}</p>

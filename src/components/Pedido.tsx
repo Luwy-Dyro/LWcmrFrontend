@@ -63,7 +63,7 @@ const Pedido = ({pedido}:any) => {
       setEstadoPedido(estadoPedido)
     }
     clasePedido();
-  }, [estadoPedido ])
+  }, [estadoPedido])
 
 
   const clasePedido = () => {
