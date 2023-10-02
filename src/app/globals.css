@@ -18,10 +18,15 @@
 
 body {
   color: rgb(var(--foreground-rgb));
-  background: linear-gradient(
+  background: rgb(var(--background-start-rgb));
+  /* background: linear-gradient(
       to bottom,
       transparent,
       rgb(var(--background-end-rgb))
     )
-    rgb(var(--background-start-rgb));
+    rgb(var(--background-start-rgb)); */
+}
+ 
+.dasboard div, .dasboard p,.dasboard H1, .dasboard h5, .dasboard a, .dasboard li, .dasboard h4, .dasboard select, .dasboard select option .dasboard input{
+  color: black;
 }
