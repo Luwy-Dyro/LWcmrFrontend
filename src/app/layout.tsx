@@ -5,7 +5,7 @@ import './globals.css'
 import type { Metadata } from 'next'
 import { Inter } from 'next/font/google'
 
-import { useRouter } from 'next/navigation'
+// import { useRouter } from 'next/navigation'
 import { usePathname } from 'next/navigation';
 
 import { ApolloWrapper } from './ApolloWrapper'
@@ -28,7 +28,7 @@ export default function RootLayout({
   children: React.ReactNode
 }) {
 
-  const router = useRouter();
+  // const router = useRouter();
   const pathname = usePathname()
 
   return (

@@ -27,12 +27,16 @@ const IndexPage = () => {
   if (loading) {
     return <p>Loading...</p>;
   }
- 
-  if (!data.obtenerClientesVendedor) {
-    client.clearStore();
-    router.push('/login');
-    return <p>Loading...</p>;
-  }
+
+    if (!data.obtenerClientesVendedor) {
+      client.clearStore();
+      router.push('/login');
+      return <p>Loading...</p>;
+    }
+
+
+
+  
 
   return (
     <div>Bienvenido</div>
