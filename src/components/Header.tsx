@@ -23,7 +23,7 @@ const Header = () => {
     //console.log(data);
     
     //const {nombre} = data.obtenerUsuario
-   const {data, loading, error}: any = useQuery(OBTENER_USER);
+   const {data, loading, client} = useQuery(OBTENER_USER);
     
 //    console.log(data);
 //    console.log(loading);
@@ -31,18 +31,19 @@ const Header = () => {
 
     //
     if(loading) return null
-    
+
     if(!data) {
 
-        return router.push('/login')
+        router.push('/login')
     }
     
     
     
-    const{nombre}:any = data.obtenerUsuario
+    const{nombre} = data.obtenerUsuario
 
     const cerrarSesion = () => {
         localStorage.removeItem('token')
+        client.clearStore();
         router.push('/login')
     }
 

@@ -19,6 +19,9 @@ import PedidoState from '../../context/pedidos/PedidoState'
 //   description: 'CRM Manteniemiento de Pedidos',
 // }
 
+
+
+
 export default function RootLayout({
   children,
 }: {
@@ -63,7 +66,7 @@ export default function RootLayout({
                 {children}
                 
             </PedidoState>
-            </ApolloWrapper>
+          </ApolloWrapper>
           
           </main>
 

@@ -2,9 +2,13 @@
 import Image from "next/image";
 import { useRouter } from "next/navigation";
 
+
+
 function Users({users}:any) {
 
   const router = useRouter()
+
+
 
   return (
     <ul>
@@ -24,7 +28,7 @@ function Users({users}:any) {
     
           </div>
 
-          <Image src={user.avatar} alt={user.email} />
+          <img src={user.avatar} alt={user.email} />
           
         </li>
       ) )
