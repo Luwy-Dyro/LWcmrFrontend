@@ -20,9 +20,13 @@ function makeClient() {
     uri: "https://lw-cmrgraphql-65cbb7f3e861.herokuapp.com/"
   })
 
+
   const authLink = setContext((_, { headers })  => {
 
-    const token = localStorage.getItem('token');
+    //const token = localStorage.getItem('token');
+    //
+    const token = typeof window !== 'undefined' ? localStorage.getItem('token') : null
+
     return{
       headers:{
         ...headers,
@@ -30,9 +34,8 @@ function makeClient() {
         authorization: token ? `Bearer ${token}` : ''
       }
     }
-  })
 
-  
+  })
 
   // const httpLink = new HttpLink({
   //     //uri: "https://rickandmortyapi.com/graphql",
