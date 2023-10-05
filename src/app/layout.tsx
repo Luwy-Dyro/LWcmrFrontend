@@ -10,7 +10,7 @@ import { usePathname } from 'next/navigation';
 
 import { ApolloWrapper } from './ApolloWrapper'
 
-const inter = Inter({ subsets: ['latin'] })
+// const inter = Inter({  subsets: ['latin'] })
 
 import PedidoState from '../../context/pedidos/PedidoState'
 
@@ -34,7 +34,8 @@ export default function RootLayout({
   return (
     <html lang="es" >
 
-      <body className={inter.className}>
+      {/* <body className={inter.className}> */}
+      <body >
 
 
     {pathname === '/login' || pathname === '/nuevacuenta' ? (

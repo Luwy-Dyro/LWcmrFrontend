@@ -1,9 +1,8 @@
-"use client";
+ "use client";
+import React, { useEffect, useState } from 'react'
 import { gql } from '@apollo/client';
 import { useQuery } from '@apollo/experimental-nextjs-app-support/ssr';
 import { useRouter } from 'next/navigation';
-import React from 'react'
-
 
 const GET_CLIENT_USUARIO = gql` query
  obtenerClientesVendedor{
@@ -23,23 +22,38 @@ const IndexPage = () => {
   const router = useRouter();
 
   const { data, loading, client } = useQuery(GET_CLIENT_USUARIO);
+  
+  
 
   if (loading) {
     return <p>Loading...</p>;
   }
+  
+  console.log(data);
+    // if (!data.obtenerClientesVendedor) {
+    //   client.clearStore();
+    //   router.push('/login');
+    //   return <p>Loading...</p>;
+    // }
 
-    if (!data.obtenerClientesVendedor) {
-      client.clearStore();
-      router.push('/login');
-      return <p>Loading...</p>;
-    }
+  
+    // useEffect(() =>{
 
+    //   if(!data || data && !data.obtenerClientesVendedor)  
+        
+    //   return router.push('/login');
 
-
+    // }, [data])
+    
+      
+    
   
 
   return (
+    <>
+   
     <div>Bienvenido</div>
+    </>
   )
 
 }

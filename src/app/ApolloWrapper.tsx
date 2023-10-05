@@ -16,9 +16,11 @@ import { setContext } from "@apollo/client/link/context";
 
 function makeClient() {
 
-  const httpLink = createHttpLink({
-    uri: "https://lw-cmrgraphql-65cbb7f3e861.herokuapp.com/"
-  })
+
+    const httpLink = createHttpLink({
+    // uri: "https://lw-cmrgraphql-65cbb7f3e861.herokuapp.com/"
+    uri: "http://localhost:4000/"
+    })
 
 
   const authLink = setContext((_, { headers })  => {

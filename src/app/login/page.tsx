@@ -1,5 +1,5 @@
 "use client"
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import { useFormik } from 'formik'
 import * as Yup from 'yup'
 import { gql, useMutation } from '@apollo/client'
@@ -18,11 +18,9 @@ const Login = () => {
 
   //Mutation crear user
   const[autenticarUsuario] = useMutation(AUTENTICAR_USER);
-
   const [mensaje, guardarMensaje ] = useState(String)
 
   const router = useRouter()
-
   const formik = useFormik({
     initialValues: {
       email: '',
@@ -31,7 +29,7 @@ const Login = () => {
     validationSchema: Yup.object({
       email: Yup.string().email('El email no es válido').required('El email es Obligatorio'),
       password: Yup.string().required('El password es obligatorio')
-    }),
+    }), 
     onSubmit: async valores => {
       //console.log(valores);
       const {email, password} = valores
@@ -45,28 +43,33 @@ const Login = () => {
             }
           }
         })
-        console.log(data);
+        //console.log(data);
         
         guardarMensaje(`Autentificando user...`)
         
         //Guardar Token en LocalStore
-        
-        setTimeout(() =>{
-          
+        // setTimeout(() =>{
+        //   const { token } = data.autenticarUsuario;
+        //   localStorage.setItem('token', token);
+        // },1000 )
+        // useEffect( () => {
+
+        // }. [])
           const { token } = data.autenticarUsuario;
-          
           localStorage.setItem('token', token);
-
-        },1000 )
-
+          router.push('/productos')
 
         
         //Redirect
   
-      setTimeout( () => {
-        guardarMensaje("")
-        router.push('/productos')
-      },1000)
+      // setTimeout( () => {
+      //   guardarMensaje("")
+      //   router.push('/productos')
+      // },2000)
+      // setTimeout( () => {
+      //   guardarMensaje("")
+      //   router.push('/productos')
+      // },500)
 
 
       }catch(error:any){

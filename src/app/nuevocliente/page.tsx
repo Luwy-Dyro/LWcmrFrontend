@@ -100,7 +100,11 @@ const NuevoCliente = () => {
         })
 
         //console.log(data.nuevoCliente);
-        router.push('/clientes')
+        setTimeout(()=>{
+
+          router.push('/clientes')
+
+        },2000 )
 
       }catch(error:any){
         guardarMensaje(error.message.replace('ApolloError: ', ' '))

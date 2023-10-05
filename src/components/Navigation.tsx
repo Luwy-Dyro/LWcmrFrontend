@@ -24,8 +24,8 @@ const Navigation = () =>  {
         <nav className='list-none'>
             <li className={pathname === "/" ? "bg-slate-700 p-2" : "p-0"}>
               <Link href="/" className='text-white mb-2 block'  > Home</Link></li>
-            <li className={pathname === "/about" ? "bg-slate-700 p-2" : "p-0"}><Link href="/about" className='text-white mb-2 block'>About</Link></li>
-            <li className={pathname === "/services" ? "bg-slate-700 p-2" : "p-0"}><Link href="/services" className='text-white mb-2 block'>Services</Link></li>
+            {/* <li className={pathname === "/about" ? "bg-slate-700 p-2" : "p-0"}><Link href="/about" className='text-white mb-2 block'>About</Link></li>
+            <li className={pathname === "/services" ? "bg-slate-700 p-2" : "p-0"}><Link href="/services" className='text-white mb-2 block'>Services</Link></li> */}
             <li className={pathname === "/clientes" ? "bg-slate-700 p-2" : "p-0"}><Link href="/clientes" className='text-white mb-2 block'>Clientes</Link></li>
             <li className={pathname === "/pedidos" ? "bg-slate-700 p-2" : "p-0"}><Link href="/pedidos" className='text-white mb-2 block'>Pedidos</Link></li>
             <li className={pathname === "/productos" ? "bg-slate-700 p-2" : "p-0"}><Link href="/productos" className='text-white mb-2 block'>Productos</Link></li>

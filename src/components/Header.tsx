@@ -1,5 +1,5 @@
 "use client";
-import React from 'react'
+import React, { useEffect,useState } from 'react'
 import { useSuspenseQuery, useQuery } from "@apollo/experimental-nextjs-app-support/ssr";
 import { gql } from "@apollo/client";
 import { useRouter } from 'next/navigation';
@@ -23,20 +23,36 @@ const Header = () => {
     //console.log(data);
     
     //const {nombre} = data.obtenerUsuario
-   const {data, loading, client} = useQuery(OBTENER_USER);
     
-//    console.log(data);
+    const {data, loading, client} = useQuery(OBTENER_USER);
+  
+    //console.log(data);
 //    console.log(loading);
 //    console.log(error);
 
     //
-    if(loading) return null
-
-    if(!data) {
-
-        router.push('/login')
-    }
     
+    useEffect(()=>{
+        
+        
+        
+    }, [])
+    
+    if(loading) return null
+ 
+    
+    if(!data || data && !data.obtenerUsuario) return router.push('/login')
+
+    // if(!data || data && !data.obtenerUsuario) return router.push('/login');
+
+    // if(!data.obtenerUsuario){   
+
+    //      return router.push('/login')
+
+    // }
+        
+
+
     
     
     const{nombre} = data.obtenerUsuario

@@ -1,6 +1,6 @@
 "use client";
 import React from 'react'
-import { useSuspenseQuery } from "@apollo/experimental-nextjs-app-support/ssr";
+import { useQuery, useSuspenseQuery } from "@apollo/experimental-nextjs-app-support/ssr";
 import { gql } from "@apollo/client";
 import { useRouter } from 'next/navigation';
 import Link from 'next/link';
@@ -23,20 +23,21 @@ const ClientesPage = () => {
   const router = useRouter();
 
   //Consulta APollo
-  const {data}: any = useSuspenseQuery(GET_CLIENT_USUARIO);
+  const {data,loading,error}:any = useSuspenseQuery(GET_CLIENT_USUARIO);
   //console.log(data);
   
-  if(!data.obtenerClientesVendedor) {
+  if(loading) return 'Loading...'
 
+  // if(!data || data && !data.obtenerClientesVendedor) return router.push('/login');
+  if(!data.obtenerClientesVendedor){   
     return router.push('/login')
   }
-
   return (
     <div>
     <h1 className="text-2xl text-gray-800 font-bold">Clientes</h1>
 
     <Link href="/nuevocliente" 
-      className='bg-blue-900 py-2 px-5 mt-5 inline-block !text-white rounded-sm text-xs hover:bg-gray-800 mb-3 uppercase font-bold w-full lg:w-auto text-center rounded'>
+      className='bg-blue-900 py-2 px-5 mt-5 inline-block !text-white rounded-sm text-xs hover:bg-gray-800 mb-3 uppercase font-bold w-full lg:w-auto text-center'>
       Nuevo Cliente
     </Link>
 

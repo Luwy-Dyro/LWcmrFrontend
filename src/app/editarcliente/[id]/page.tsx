@@ -140,7 +140,7 @@ const EditarCliente = () => {
       //TODO: rediccionar
 
       Swal.fire(
-        'Actualizdo!',
+        'Actualizado!',
         'El usuario se actualizó correct',
         'success'
     )

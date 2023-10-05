@@ -1,3 +1,4 @@
+/* eslint-disable react-hooks/rules-of-hooks */
 import React, { useEffect, useState } from 'react'
 import Swal from 'sweetalert2'
 import { gql, useMutation } from '@apollo/client';
@@ -27,7 +28,17 @@ query obtenerPedidosVendedor{
 
 const Pedido = ({pedido}:any) => { 
   
+  const {id, total, estado, cliente} = pedido
+  //console.log(pedido);
+   
+  if(!cliente) return null
+  const {nombre, apellido, telefono, email} = cliente
+
+  //const {id, total, cliente: {nombre, apellido, telefono, email}, estado, cliente} = pedido
+
+  // eslint-disable-next-line react-hooks/rules-of-hooks
   const [actualizarPedido] = useMutation(UPDATE_PEDIDO)
+  // eslint-disable-next-line react-hooks/rules-of-hooks
   const [eliminarPedido] = useMutation(DELETE_PEDIDO, {
 
     update(cache){
@@ -47,14 +58,8 @@ const Pedido = ({pedido}:any) => {
   })
   
   
-  
-  const {id, total, cliente: {nombre, apellido, telefono, email}, estado, cliente} = pedido
-  //console.log(pedido);
-  
-  //MUTATION
-    
+  //MUTATION  
   const [estadoPedido, setEstadoPedido] = useState(estado);
-
   const [clase, setClase] = useState('');
 
   useEffect ( () => {
@@ -213,7 +218,7 @@ const Pedido = ({pedido}:any) => {
         </p>
 
         <button
-          className='flex items-center mt-4 bg-red-800  px-5 py-2 inline-block text-white rounded leading-tight uppercase text-xs font-bold'
+          className='flex items-center mt-4 bg-red-800  px-5 py-2  text-white rounded leading-tight uppercase text-xs font-bold'
           onClick={  () => confirmarEliminarPedido()}
 
         >Eliminar Pedido

@@ -24,7 +24,7 @@ const ProductosPage = () => {
   const {data,loading,error}:any = useSuspenseQuery(GET_PRODUCTO_USER);
   //console.log(data);
 
-  //if(loading) return 'Loading...'
+  if(loading) return 'Loading...'
 
   
   if(!data.obtenerProductos){   
