@@ -63,7 +63,7 @@ export default function RootLayout({
           <ApolloWrapper>
             
             <PedidoState>
-               <Header />
+               {/* <Header /> */}
                 {children}
                 
             </PedidoState>

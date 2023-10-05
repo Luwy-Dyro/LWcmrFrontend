@@ -32,11 +32,7 @@ const Header = () => {
 
     //
     
-    useEffect(()=>{
-        
-        
-        
-    }, [])
+
     
     if(loading) return null
  

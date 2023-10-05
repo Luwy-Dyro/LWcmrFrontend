@@ -29,12 +29,12 @@ const IndexPage = () => {
     return <p>Loading...</p>;
   }
   
-  console.log(data);
-    // if (!data.obtenerClientesVendedor) {
-    //   client.clearStore();
-    //   router.push('/login');
-    //   return <p>Loading...</p>;
-    // }
+  // console.log(data);
+  if(!data || data && !data.obtenerClientesVendedor)  {
+      client.clearStore();
+      router.push('/login');
+      return <p>Loading...</p>;
+    }
 
   
     // useEffect(() =>{
@@ -43,7 +43,7 @@ const IndexPage = () => {
         
     //   return router.push('/login');
 
-    // }, [data])
+    // }, [])
     
       
     
